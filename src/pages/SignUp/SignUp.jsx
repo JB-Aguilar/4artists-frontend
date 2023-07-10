@@ -11,7 +11,6 @@ function SignUp() {
   const [repeatPassword, setRepeatPassword] = useState("")
   const [email, setEmail] = useState("")
   const [birth, setBirth] = useState("")
-  const [showError, setShowError] = useState("")
   const [showError, setShowError] = useState(false);
 
   function handleUsername(e){
@@ -47,6 +46,10 @@ function SignUp() {
   function emailVerification(){
     var reg = /^([A-Za-z0-9-.])+@([A-Za-z0-9-.])+.([A-Za-z]{2,4})$/;
     return !(reg.test(email))
+  }
+
+  function handleBirth(e) {
+    setBirth(e.target.value);
   }
 
   const calculateAge = (birthday) => {
@@ -86,7 +89,7 @@ function SignUp() {
     setShowError(false)
   }
 
-  function submitForum(e){
+  function submitForm(e){
     e.preventDefault()
     if(
       !usernameVerification() &&
@@ -158,8 +161,9 @@ function SignUp() {
               Username
             </label>
             <input
+              onChange = {handleUsername}
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-              type="email"
+              type="text"
             />
           </div>
           <div className="mt-4">
@@ -167,6 +171,7 @@ function SignUp() {
               Email Address
             </label>
             <input
+              onChange={handleEmail}
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               type="email"
             />
@@ -179,6 +184,7 @@ function SignUp() {
               <a href="#" className="text-xs text-gray-500"></a>
             </div>
             <input
+              onChange={handlePassword}
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               type="password"
             />
@@ -191,6 +197,7 @@ function SignUp() {
               <a href="#" className="text-xs text-gray-500"></a>
             </div>
             <input
+              onChange={handleRepeatPassword}
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               type="password"
             />
@@ -203,12 +210,13 @@ function SignUp() {
               <a href="#" className="text-xs text-gray-500"></a>
             </div>
             <input
+              onChange={handleBirth}
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               type="date"
             />
           </div>
           <div className="mt-8">
-            <button className="bg-indigo-600 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">
+            <button onClick={(e) => submitForm(e)} className="bg-indigo-600 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">
               Sign Up
             </button>
           </div>
