@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import { SignUpAPI } from "../../services/auth.services"
 
 import "./SignUp.css"
@@ -77,7 +77,7 @@ function SignUp() {
       setErrorMsg('Warning! Some fields are incorrect or empty')
       showerrorMsg()
     }else{
-      navigate('/createProfile')
+      navigate('/home')
     }
   }
 
@@ -121,7 +121,7 @@ function SignUp() {
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
             4Artists
           </h2>
-          <p className="text-xl text-gray-600 text-center">Welcome back!</p>
+          <p className="text-xl text-gray-600 text-center">A Social Network for Art</p>
           <a
             href="#"
             className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100"
