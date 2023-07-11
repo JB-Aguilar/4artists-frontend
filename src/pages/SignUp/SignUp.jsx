@@ -18,7 +18,7 @@ function SignUp() {
     setUsername(e.target.value)
   }
 
-  function usernameVerification(e){
+  function usernameVerification(){
     return (username.length < 5)
   }
 
@@ -71,11 +71,11 @@ function SignUp() {
   const SignUpService = async () => {
     const res = await SignUpAPI(username, email, password, birth)
     if (res === 'error'){
-      setShowErrorMsg('Error! Email already exist')
+      //setShowErrorMsg('Error! Email already exist')
       showError()
     }else if(!localStorage.getItem('token')) {
-      setErrorMsg('Warning! Some fields are incorrect or empty')
-      showerrorMsg()
+      //setErrorMsg('Warning! Some fields are incorrect or empty')
+      //showerrorMsg()
     }else{
       navigate('/home')
     }
@@ -86,9 +86,9 @@ function SignUp() {
     setTimeout(() => { setShowError(false)}, 4000)
   }
 
-  const hideErrorMsg = () => {
+  /*const hideErrorMsg = () => {
     setShowError(false)
-  }
+  }*/
 
   function submitForm(e){
     e.preventDefault()
@@ -101,7 +101,7 @@ function SignUp() {
     ) {
       SignUpService()
     }else{
-      setShowErrorMsg('Warning! Some fields are incorrect or empty')
+      //setShowErrorMsg('Warning! Some fields are incorrect or empty')
       showErrorMsg()
     }
   }
@@ -118,7 +118,7 @@ function SignUp() {
           }}
         ></div>
         <div className="w-full p-8 lg:w-1/2">
-          <h2 className="text-2xl font-semibold text-gray-700 text-center">
+          <h2 className="text-2xl font-semibold text-indigo-600 text-center">
             4Artists
           </h2>
           <p className="text-xl text-gray-600 text-center">A Social Network for Art</p>
