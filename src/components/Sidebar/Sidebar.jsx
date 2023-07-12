@@ -1,23 +1,5 @@
-import { useEffect, useState } from "react";
-import { GetPostsApi } from "../../services/post.services";
-import { CreatePostAPI } from "../../services/post.services";
-
-import Postcard from "../PostCard/Postcard";
-
 function Sidebar() {
-    const [post, setPost] = useState([])
-
-    const GetPosts = async () => {
-      const res = await GetPostsApi()
-      setPost(res)
-    }
-
-    useEffect(() => {
-      GetPosts()
-    }, [])
-
   return (
-    <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
         <div className="flex items-center justify-center h-14 border-b">
           <div>4Artists</div>
@@ -163,12 +145,6 @@ function Sidebar() {
           <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
         </a>
       </div>
-    <div>
-      { post.length > 0 && post.map((post) => (
-        <Postcard key={post.id} post={post} />
-      ))}
-    </div>
-    </div>
   );
 }
 
