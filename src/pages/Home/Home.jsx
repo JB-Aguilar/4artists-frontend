@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { GetPostsApi } from "../../services/post.services";
 
 import Postcard from "../../components/PostCard/Postcard"
+import TextInput from "../../components/TextInput/TextInput";
 
 function Home() {
   const [post, setPost] = useState([]);
@@ -19,6 +20,7 @@ function Home() {
   return (
     <div className="">
       <Sidebar />
+      <TextInput />
       {post.length > 0 &&
         post.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
     </div>
