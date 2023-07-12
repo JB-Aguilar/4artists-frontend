@@ -7,10 +7,13 @@ import Postcard from "../PostCard/Postcard";
 function Sidebar() {
     const [post, setPost] = useState([])
 
+    const GetPosts = async () => {
+      const res = await GetPostsApi()
+      setPost(res)
+    }
+
     useEffect(() => {
-        GetPostsApi()
-        .then(data => setPost(data))
-        .catch(error => console.error(error))
+      GetPosts()
     }, [])
 
   return (
@@ -160,9 +163,11 @@ function Sidebar() {
           <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
         </a>
       </div>
-      {post.map((post) => (
+    <div>
+      { post.length > 0 && post.map((post) => (
         <Postcard key={post.id} post={post} />
       ))}
+    </div>
     </div>
   );
 }
