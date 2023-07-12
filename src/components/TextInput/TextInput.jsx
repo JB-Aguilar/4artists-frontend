@@ -124,8 +124,7 @@ function TextInput({onNewPost}) {
             </div>
           </div>
         </div>
-
-        <div className="flex-1">
+        <div className="flex-1 flex-row ">
           <button
             className="bg-indigo-600 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right"
             onClick={handlePost}

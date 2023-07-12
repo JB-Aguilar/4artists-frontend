@@ -1,5 +1,6 @@
 function Sidebar() {
   return (
+    <div className="hidden lg:block">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-indigo-100 h-full border-r">
         <div className="flex items-center justify-center h-14 border-b">
           <div>4Artists</div>
@@ -142,6 +143,7 @@ function Sidebar() {
           <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
         </a>
       </div>
+    </div>
   );
 }
 
