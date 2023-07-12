@@ -1,28 +1,43 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useEffect, useState } from "react";
-import { GetPostsApi } from "../../services/post.services";
+import { CreatePostAPI, GetPostsApi } from "../../services/post.services";
 
 import Postcard from "../../components/PostCard/Postcard"
 import TextInput from "../../components/TextInput/TextInput";
 
 function Home() {
-  const [post, setPost] = useState([]);
+  const [posts, setPost] = useState([]);
+  
 
   const GetPosts = async () => {
-    const res = await GetPostsApi();
-    setPost(res);
+    try{
+      const res = await GetPostsApi();
+      console.log(res)
+      setPost(res);
+    }catch(error){
+      console.error(error)
+    }
   };
 
   useEffect(() => {
     GetPosts();
   }, []);
 
+  const handleNewPost = async (text) => {
+    try {
+      await CreatePostAPI(text)
+      GetPosts()
+    }catch(error){
+       console.error(error)
+    }
+  }
+
   return (
     <div className="">
       <Sidebar />
-      <TextInput />
-      {post.length > 0 &&
-        post.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
+      <TextInput onNewPost={handleNewPost} />
+      {posts.length > 0 &&
+        posts.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
     </div>
   );
 }

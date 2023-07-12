@@ -1,6 +1,27 @@
-function TextInput() {
+import { useState } from "react";
+
+// eslint-disable-next-line react/prop-types
+function TextInput({onNewPost}) {
+    const [text, setText] = useState("")
+
+    const handlePost = async () => {
+        if(text.trim() !== ""){
+            try {
+                setText("")
+                onNewPost(text)
+            }catch(error){
+                console.error(error)
+            }
+            
+        }
+    }
+
+    const handleChange = (e) => {
+        setText(e.target.value)
+    }
+
   return (
-    <div className="">
+    <div className=" flex flex-col bg-indigo-200 max-w-[50rem] max-h-[10rem] shadow-md m-auto z-10">
       <div className="flex">
         <div className="m-2 w-10">
           <img
@@ -11,10 +32,12 @@ function TextInput() {
         </div>
         <div className="flex-1 px-2 pt-2 mt-2">
           <textarea
-            className=" border bg-transparent text-black text-lg w-full pl-2 pt-1"
+            className=" border border-indigo-300 bg-transparent text-black text-lg w-full pl-2 pt-1"
             rows="2"
             cols="50"
             placeholder="What's happening?"
+            value={text}
+            onChange={handleChange}
           ></textarea>
         </div>
       </div>
@@ -103,7 +126,10 @@ function TextInput() {
         </div>
 
         <div className="flex-1">
-          <button className="bg-indigo-600 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
+          <button
+            className="bg-indigo-600 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right"
+            onClick={handlePost}
+          >
             Post
           </button>
         </div>
