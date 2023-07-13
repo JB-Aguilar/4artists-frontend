@@ -30,18 +30,18 @@ function UserProfile() {
     }, [])
 
   return (
-    <div className="">
+    <div className="bg-indigo-200">
       <section className="pt-16 bg-blueGray-50">
         <div className="w-full lg:w-4/6 px-4 mx-auto">
-          <div className="relative flex flex-col min-w-0 break-words bg-indigo-200 w-full mb-6 shadow-xl rounded-lg mt-16">
+          <div className="relative flex flex-col min-w-0 break-words bg-indigo-300 w-full mb-6 shadow-lg rounded-lg mt-16">
             <div className="px-6">
               <div className="flex flex-wrap justify-center">
-                <div className="w- border border-red-500 px-9 flex justify-center">
-                  <div className="relative">
+                <div className="w-60 px-9 flex justify-center">
+                  <div className="flex justify-center pb-5">
                     <img
                       alt=""
                       src="https://as2.ftcdn.net/v2/jpg/05/56/32/59/1000_F_556325968_zoSMJU85U3B4j47iKSQTXeO04TXTc408.jpg"
-                      className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
+                      className="shadow-xl rounded-full h-auto align-middle border-none -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                     />
                   </div>
                 </div>
