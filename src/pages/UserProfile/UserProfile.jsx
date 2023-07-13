@@ -7,6 +7,8 @@ function UserProfile() {
     const [userName, setUserName] = useState([])
     const [myPosts, setMyPosts] = useState([])
 
+  console.log(myPosts)
+
     const getUser = async () => {
         const res = await GetProfileAPI()
         if(res){
@@ -40,7 +42,7 @@ function UserProfile() {
                   <div className="flex justify-center pb-5">
                     <img
                       alt=""
-                      src="https://as2.ftcdn.net/v2/jpg/05/56/32/59/1000_F_556325968_zoSMJU85U3B4j47iKSQTXeO04TXTc408.jpg"
+                      src="https://i.gyazo.com/f93a87751013c31bf7a2f68375e2292c.png"
                       className="shadow-xl rounded-full h-auto align-middle border-none -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                     />
                   </div>
@@ -52,15 +54,15 @@ function UserProfile() {
                 </h3>
                 <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                   <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-                  Los Angeles, California
+                  Los Santos, California
                 </div>
                 <div className="mb-2 text-blueGray-600 mt-10">
                   <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-                  Rebooter - Nonamer - Dev Student
+                  Aceituner - Mimimimi - Agente Rosa 4Ever
                 </div>
                 <div className="mb-2 text-blueGray-600">
                   <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-                  University of Life
+                  University of la Vida, muchacho
                 </div>
               </div>
               <div className="mt-10 py-10 border-t border-blueGray-200 text-center">

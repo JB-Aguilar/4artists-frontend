@@ -8,7 +8,6 @@ import ToFollow from "../../components/ToFollow/ToFollow";
 
 function Home() {
   const [posts, setPost] = useState([]);
-  
 
   const GetPosts = async () => {
     try{
@@ -31,6 +30,8 @@ function Home() {
        console.error(error)
     }
   }
+
+  console.log(posts)
 
   return (
     <div className="">
