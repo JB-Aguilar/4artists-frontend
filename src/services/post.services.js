@@ -20,7 +20,6 @@ export const CreatePostAPI = async (text) => {
 export const GetPostsApi = async () => {
   try {
     const { data } = await api.get("/post");
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Cannot see any post");

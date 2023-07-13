@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
+
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <div className="hidden lg:block">
       <div className="fixed flex flex-col top-0 left-0 w-64 bg-indigo-100 h-full border-r">
@@ -68,7 +77,7 @@ function Sidebar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/profile"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-indigo-600 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
@@ -94,7 +103,7 @@ function Sidebar() {
             </li>
             <li>
               <a
-                href="#"
+                href="3"
                 className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-indigo-600 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
@@ -120,28 +129,30 @@ function Sidebar() {
             </li>
           </ul>
         </div>
-        <a
-          href="#"
-          className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-        >
-          <span className="inline-flex justify-center items-center ml-4">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-              ></path>
-            </svg>
-          </span>
-          <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
-        </a>
+        <div>
+          <div
+            onClick={() => logOut()}
+            className="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+          >
+            <span className="inline-flex justify-center items-center ml-4">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                ></path>
+              </svg>
+            </span>
+            <span className="ml-2 text-sm tracking-wide truncate">Logout</span>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { CreatePostAPI, GetPostsApi } from "../../services/post.services";
 
 import Postcard from "../../components/PostCard/Postcard"
 import TextInput from "../../components/TextInput/TextInput";
+import ToFollow from "../../components/ToFollow/ToFollow";
 
 function Home() {
   const [posts, setPost] = useState([]);
@@ -12,7 +13,6 @@ function Home() {
   const GetPosts = async () => {
     try{
       const res = await GetPostsApi();
-      console.log(res)
       setPost(res);
     }catch(error){
       console.error(error)
@@ -38,6 +38,7 @@ function Home() {
       <TextInput onNewPost={handleNewPost} />
       {posts.length > 0 &&
         posts.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
+      <ToFollow />
     </div>
   );
 }
