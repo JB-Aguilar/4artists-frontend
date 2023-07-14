@@ -21,12 +21,12 @@ function TextInput({onNewPost}) {
     }
 
   return (
-    <div className=" flex flex-col bg-gray-800 max-w-[50rem] max-h-[10rem] shadow-md m-auto z-10 rounded-lg border border-white">
+    <div className=" flex flex-col bg-gray-800 max-w-[50rem] max-h-[10rem] shadow-md m-auto z-10 rounded-lg border border-gray-500">
       <div className="flex">
         <div className="m-2 w-10">
           <img
             className="inline-block h-10 w-10 rounded-full ml-3 mt-2"
-            src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png"
+            src="https://i.pinimg.com/736x/86/94/dc/8694dc58b64ff6409aef141d644dac87.jpg"
             alt=""
           />
         </div>

@@ -10,12 +10,12 @@ function Sidebar() {
   };
   return (
     <div className="hidden lg:block">
-      <div className="fixed flex flex-col top-0 left-0 w-64 bg-gray-800 h-full border-r">
-        <div className="flex items-center justify-center h-14 border-b text-gray-300">
+      <div className="fixed flex flex-col top-0 left-0 w-64 bg-gray-800 h-full border-r border-gray-500">
+        <div className="flex items-center justify-center h-14 border-b border-gray-500 text-gray-300">
           <div>4Artists</div>
         </div>
-        <div className="overflow-y-auto overflow-x-hidden flex-grow">
-          <ul className="flex flex-col py-4 space-y-1">
+        <div className="overflow-y-auto overflow-x-hidden flex-grow border-t border-l border-r m-5  border-gray-500 rounded-md">
+          <ul className="flex flex-col py-4 space-y-1 ">
             <li className="px-5">
               <div className="flex flex-row items-center h-8">
                 <div className="text-xl font-light tracking-wide text-gray-300">

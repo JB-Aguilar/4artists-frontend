@@ -4,6 +4,7 @@
 import './Postcard.css'
 import { useState } from "react";
 import LastSeen from "../LastSeen/LastSeen";
+import ImageCard from '../ImageCard/ImageCard';
 
 function Postcard({post}) {
   const[like, setLike] = useState(false)
@@ -19,10 +20,10 @@ function Postcard({post}) {
 
   return (
     <div className=" flex flex-col flex-shrink-0 antialiased  text-gray-300 ">
-      <div className=" relative ml-auto w-full max-w-[50rem] mt-5 bg-[#2F3E52] flex-col mr-auto bg-transparent bg-clip-border text-grey-700 shadow-md mb-5 rounded-lg border-b border-white shadow-lg shadow-gray-400/50 ">
+      <div className=" relative ml-auto w-full max-w-[50rem] mt-5 bg-[#2F3E52] flex-col mr-auto bg-transparent bg-clip-border text-grey-700 shadow-md mb-5 rounded-lg border border-gray-500 ">
         <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none ">
           <img
-            src="https://i.gyazo.com/f93a87751013c31bf7a2f68375e2292c.png"
+            src="https://i.pinimg.com/736x/86/94/dc/8694dc58b64ff6409aef141d644dac87.jpg"
             className="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center ml-4"
           />
           <div className="flex w-full flex-col gap-0.5 ">
@@ -40,6 +41,7 @@ function Postcard({post}) {
           <p className=" block font-sans text-lg font-semibold leading-relaxed text-left antialiased">
             {post.text}
           </p>
+          <div>{post.text != "image" ? "" : <ImageCard />}</div>
           <div className="flex flex-row-reverse gap-5 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
