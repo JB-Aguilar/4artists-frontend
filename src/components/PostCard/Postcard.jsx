@@ -6,9 +6,11 @@ import { useState } from "react";
 import LastSeen from "../LastSeen/LastSeen";
 import ImageCard from '../ImageCard/ImageCard';
 
+
 function Postcard({post}) {
   const[like, setLike] = useState(false)
   const[share, setShare] = useState(false)
+  const[likesCount, setLikesCount] = useState(0);
 
   const handleLike = () => {
     setLike(!like)
@@ -17,6 +19,10 @@ function Postcard({post}) {
   const handleShare = () => {
     setShare(!share)
   }
+
+  const handleCountLike = () => {
+    setLikesCount(likesCount + 1);
+  };
 
   return (
     <div className=" flex flex-col flex-shrink-0 antialiased  text-gray-300 ">
@@ -43,6 +49,7 @@ function Postcard({post}) {
           </p>
           <div>{post.text != "image" ? "" : <ImageCard />}</div>
           <div className="flex flex-row-reverse gap-5 ">
+            <p className="w-6 h-6 mt-4">{likesCount}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -52,7 +59,10 @@ function Postcard({post}) {
               className={`w-6 h-6 mt-4 ${
                 like ? "fill-red-500 text-red-500" : " text-red-500"
               }`}
-              onClick={handleLike}
+              onClick={() => {
+                handleLike();
+                handleCountLike();
+              }}
             >
               <path
                 strokeLinecap="round"
