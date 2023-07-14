@@ -31,7 +31,6 @@ function UserProfile() {
                             <Postcard key={post.id} post={post} />
                           ))}*/
 
-
   useEffect(() => {
     getUser();
     getMyPosts();
@@ -39,18 +38,15 @@ function UserProfile() {
 
   return (
     <section className="pt-16 bg-blueGray-50">
-      <div className="w-full lg:w-4/12 px-4 mx-auto">
         <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-          <div className="px-6">
-            <div className="flex flex-wrap justify-center">
-              <div className="w-full px-4 flex justify-center">
-                <div className="relative">
+          <div className="px-6 border-green-500">
+            <div className="flex flex-wrap justify-center border-red-500">
+              <div className="w-full px-4 flex justify-center border">
                   <img
                     alt="..."
-                    src="https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68"
-                    className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
+                    src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
+                    className=" left-15 shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                   />
-                </div>
               </div>
               <div className="w-full px-4 text-center mt-20">
                 <div className="flex justify-center py-4 lg:pt-4 pt-8">
@@ -92,7 +88,7 @@ function UserProfile() {
                 University of Computer Science
               </div>
             </div>
-            <div className="mt-10 py-10 border-t border-blueGray-200 text-justify">
+            <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-9/12 px-4">
                   <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
@@ -102,43 +98,15 @@ function UserProfile() {
                     intimate feel with a solid groove structure. An artist of
                     considerable range.
                   </p>
-                  <a
-                    href="javascript:void(0);"
-                    className="font-normal text-pink-500"
-                  >
-                    Show more
-                  </a>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
       <footer className="relative  pt-8 pb-6 mt-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center md:justify-between justify-center">
-            <div className="w-full md:w-6/12 px-4 mx-auto text-center">
-              <div className="text-sm text-blueGray-500 font-semibold py-1">
-                Made with{" "}
-                <a
-                  href="https://www.creative-tim.com/product/notus-js"
-                  className="text-blueGray-500 hover:text-gray-800"
-                  target="_blank"
-                >
-                  Notus JS
-                </a>{" "}
-                by{" "}
-                <a
-                  href="https://www.creative-tim.com"
-                  className="text-blueGray-500 hover:text-blueGray-800"
-                  target="_blank"
-                >
-                  {" "}
-                  Creative Tim
-                </a>
-                .
-              </div>
-            </div>
+            <div className="w-full md:w-6/12 px-4 mx-auto text-center"></div>
           </div>
         </div>
       </footer>
