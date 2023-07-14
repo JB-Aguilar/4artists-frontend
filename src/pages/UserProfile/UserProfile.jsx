@@ -41,13 +41,7 @@ function UserProfile() {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
-            <div className="w-full px-4 flex justify-center">
-              <img
-                alt="..."
-                src="https://definicion.de/wp-content/uploads/2016/03/rana.jpg"
-                className=" absolute left-15 shadow-xl rounded-full h-2/6 align-middle border-none -m-16 -ml-20 -top-10 lg:-ml-16"
-              />
-            </div>
+            <div className="w-full px-4 flex justify-center"></div>
           </div>
           <div className="text-center mt-12">
             <h3 className="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
@@ -70,11 +64,16 @@ function UserProfile() {
             <div className="flex flex-wrap justify-center">
               <div className="w-full lg:w-9/12 px-4">
                 <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                  An artist of considerable range, Jenna the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
-                  and records all of his own music, giving it a warm, intimate
-                  feel with a solid groove structure. An artist of considerable
-                  range.
+                  <div
+                    style={{ height: "500px", overflow: "auto" }}
+                    className="bg-[#2F3E52]"
+                  >
+                    {myPosts.length > 0 &&
+                      myPosts
+                        .slice()
+                        .reverse()
+                        .map((post) => <Postcard key={post.id} post={post} />)}
+                  </div>
                 </p>
               </div>
             </div>
