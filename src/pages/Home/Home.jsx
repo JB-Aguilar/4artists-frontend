@@ -5,6 +5,7 @@ import { CreatePostAPI, GetPostsApi } from "../../services/post.services";
 import Postcard from "../../components/PostCard/Postcard"
 import TextInput from "../../components/TextInput/TextInput";
 import ToFollow from "../../components/ToFollow/ToFollow";
+import Trending from "../../components/Trending/Trending";
 
 function Home() {
   const [posts, setPost] = useState([]);
@@ -40,6 +41,7 @@ function Home() {
       {posts.length > 0 &&
         posts.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
       <ToFollow />
+      <Trending />
     </div>
   );
 }

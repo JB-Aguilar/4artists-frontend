@@ -21,7 +21,7 @@ function TextInput({onNewPost}) {
     }
 
   return (
-    <div className=" flex flex-col bg-gray-800 max-w-[50rem] max-h-[10rem] shadow-md m-auto z-10 rounded-lg border border-gray-500">
+    <div className=" flex flex-col bg-[#99DBF5] max-w-[50rem] max-h-[10rem] shadow-md m-auto z-10 border-b">
       <div className="flex">
         <div className="m-2 w-10">
           <img
@@ -32,7 +32,7 @@ function TextInput({onNewPost}) {
         </div>
         <div className="flex-1 px-2 pt-2 mt-2">
           <textarea
-            className=" bg-transparent text-gray-400 text-lg w-full pl-2 pt-1"
+            className=" bg-transparent placeholder-gray-500 text-gray-500 text-lg w-full pl-2 pt-1"
             rows="2"
             cols="50"
             placeholder="What's happening?"
@@ -49,7 +49,7 @@ function TextInput({onNewPost}) {
             <div className="flex-1 text-center px-1 py-1 m-2">
               <a
                 href="#"
-                className="mt-1 group flex items-center text-gray-300 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-blue-300"
+                className="mt-1 group flex items-center text-gray-500 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-indigo-600"
               >
                 <svg
                   className="text-center h-7 w-6"
@@ -68,7 +68,7 @@ function TextInput({onNewPost}) {
             <div className="flex-1 text-center py-2 m-2">
               <a
                 href="#"
-                className="mt-1 group flex items-center text-gray-300 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-blue-300"
+                className="mt-1 group flex items-center text-gray-500 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-indigo-600"
               >
                 <svg
                   className="text-center h-7 w-6"
@@ -88,7 +88,7 @@ function TextInput({onNewPost}) {
             <div className="flex-1 text-center py-2 m-2">
               <a
                 href="#"
-                className="mt-1 group flex items-center text-gray-300 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-blue-300"
+                className="mt-1 group flex items-center text-gray-500 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-indigo-600"
               >
                 <svg
                   className="text-center h-7 w-6"
@@ -107,7 +107,7 @@ function TextInput({onNewPost}) {
             <div className="flex-1 text-center py-2 m-2">
               <a
                 href="#"
-                className="mt-1 group flex items-center text-gray-300 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-blue-300"
+                className="mt-1 group flex items-center text-gray-500 px-2 py-2 text-base leading-6 font-medium rounded-full hover:blue-800 hover:text-indigo-600"
               >
                 <svg
                   className="text-center h-7 w-6"

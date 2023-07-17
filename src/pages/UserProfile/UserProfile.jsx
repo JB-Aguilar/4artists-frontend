@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GetMyPosts, GetProfileAPI } from "../../services/profile.services";
 import Postcard from "../../components/PostCard/Postcard";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 function UserProfile() {
   const [userName, setUserName] = useState([]);
@@ -38,7 +39,8 @@ function UserProfile() {
 
   return (
     <section className="pt-16 bg-blueGray-50">
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
+      <Sidebar />
+      <div className="relative flex flex-col -mt-11 min-w-0 break-words bg-sky-300 w-full mb-6 shadow-xl rounded-lg">
         <div className="px-6">
           <div className="flex flex-wrap justify-center">
             <div className="w-full px-4 flex justify-center"></div>
@@ -66,7 +68,7 @@ function UserProfile() {
                 <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
                   <div
                     style={{ height: "500px", overflow: "auto" }}
-                    className="bg-[#2F3E52]"
+                    className="bg-[#2F3E52] rounded-lg"
                   >
                     {myPosts.length > 0 &&
                       myPosts

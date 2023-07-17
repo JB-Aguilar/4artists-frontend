@@ -31,10 +31,10 @@ function ToFollow() {
 
   return (
     <div className="flex fixed z-5 right-0 top-0 mt-5 hidden lg:block ">
-      <div className="max-w-sm bg-gray-800 overflow-hidden shadow-lg m-4 mr-20 rounded-lg border border-gray-500">
+      <div className="max-w-sm bg-sky-200 overflow-hidden shadow-lg m-4 mr-20">
         <div className="flex">
           <div className="flex-1 m-2">
-            <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-300">
+            <h2 className="px-4 py-2 text-xl w-48 font-semibold text-gray-700">
               Who to discover
             </h2>
           </div>
@@ -54,7 +54,7 @@ function ToFollow() {
                   />
                 </div>
                 <div className="ml-3 mt-3">
-                  <p className="text-base leading-6 font-medium text-gray-300">
+                  <p className="text-base leading-6 font-medium text-gray-500 cursor-pointer hover:text-indigo-600">
                     {username}
                   </p>
                 </div>
@@ -69,8 +69,6 @@ function ToFollow() {
             </div>
           </div>
         ))}
-
-        <hr className="border-gray-300" />
       </div>
     </div>
   );
