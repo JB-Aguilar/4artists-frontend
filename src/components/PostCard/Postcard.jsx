@@ -5,7 +5,7 @@ import "./Postcard.css";
 import { useEffect, useState } from "react";
 import LastSeen from "../LastSeen/LastSeen";
 import ImageCard from "../ImageCard/ImageCard";
-import { SaveLikes, RemoveLikes } from "../../services/user.services";
+import { toggleLike } from "../../services/user.services";
 import { GetProfileAPI } from "../../services/profile.services";
 
 function Postcard({ post }) {
@@ -20,17 +20,17 @@ function Postcard({ post }) {
     }
   };
 
-  const handleLike = async () => {
-    await SaveLikes(user.id, post.id);
-  };
+   const handleLike = async () => {
+     const { liked } = await toggleLike(user.id, post.id);
+     setLike(liked);
+     setLikesCount((prevCount) => (liked ? prevCount + 1 : prevCount - 1));
+   };
 
-  console.log(post)
-
-  useEffect(() => {
-    getUser();
-    setLike(post.likes && post.likes.includes(user.id));
-    setLikesCount(post.likes ? post.likes.length : 0);
-  }, []);
+   useEffect(() => {
+     getUser();
+     setLike(post.likes && post.likes.includes(user.id));
+     setLikesCount(post.likes ? post.likes.length > 0 : 0);
+   }, [post.likes, user.id]);
 
   return (
     <div className=" flex flex-col flex-shrink-0 antialiased  text-gray-300">

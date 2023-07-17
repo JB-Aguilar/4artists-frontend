@@ -9,12 +9,16 @@ export const GetUsers = async () => {
     }
 }
 
-export const SaveLikes = async (userId, postId) => {
+export const toggleLike = async (userId, postId) => {
   try {
-    const { data } = await api.post(`/users/${userId}/likes/${postId}`);
+    const { data } = await api.post(`/posts/${postId}/toggle-like`, null, {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
     return data;
   } catch (error) {
-    console.error("Cannot save like", error);
+    console.error("Cannot toggle like", error);
   }
 };
 
