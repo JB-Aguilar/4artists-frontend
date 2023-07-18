@@ -11,7 +11,7 @@ export const GetUsers = async () => {
 
 export const toggleLike = async (userId, postId) => {
   try {
-    const { data } = await api.post(`/posts/${postId}/toggle-like`, null, {
+    const { data } = await api.post(`/users/${userId}/likes/${postId}`, {
       headers: {
         token: localStorage.getItem("token"),
       },
@@ -19,14 +19,5 @@ export const toggleLike = async (userId, postId) => {
     return data;
   } catch (error) {
     console.error("Cannot toggle like", error);
-  }
-};
-
-export const RemoveLikes = async (userId, postId) => {
-  try {
-    const { data } = await api.delete(`/users/${userId}/likes/${postId}`);
-    return data;
-  } catch (error) {
-    console.error("Cannot delete like", error);
   }
 };

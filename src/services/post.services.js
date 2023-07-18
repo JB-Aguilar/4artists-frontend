@@ -1,11 +1,13 @@
 import { api } from "./api";
 
-export const CreatePostAPI = async (text) => {
+export const CreatePostAPI = async (text, img) => {
   try {
-    const { data } = await api.post(
-      "/post",
-      { text },
-      {
+    console.log(text, img)
+    const formData = new FormData();
+    formData.append("img", img);
+    formData.append("text", text)
+
+    const { data } = await api.post("/post", formData, {
         headers: {
           token: localStorage.getItem("token"),
         },

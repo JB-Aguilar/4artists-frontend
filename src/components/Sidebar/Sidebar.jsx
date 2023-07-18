@@ -9,7 +9,7 @@ function Sidebar() {
   };
   return (
     <div className="hidden lg:block">
-      <div className="fixed flex flex-col top-0 left-0 w-64 bg-sky-200 h-full">
+      <div className="fixed flex flex-col top-0 left-0 w-64 bg-white h-full">
         <div className="flex items-center justify-center h-14 text-gray-700">
           <div>4Artists</div>
         </div>
@@ -25,7 +25,7 @@ function Sidebar() {
             <li>
               <a
                 href="/home"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-[#9146FF] border-l-4 border-transparent hover:border-[#9146FF] pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
@@ -51,7 +51,7 @@ function Sidebar() {
             <li>
               <a
                 href="#"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-[#9146FF] border-l-4 border-transparent hover:border-[#9146FF] pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
@@ -77,7 +77,7 @@ function Sidebar() {
             <li>
               <a
                 href="/profile"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-[#9146FF] border-l-4 border-transparent hover:border-[#9146FF] pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
@@ -103,7 +103,7 @@ function Sidebar() {
             <li>
               <a
                 href="3"
-                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-indigo-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+                className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-[#9146FF] border-l-4 border-transparent hover:border-[#9146FF] pr-6"
               >
                 <span className="inline-flex justify-center items-center ml-4">
                   <svg
@@ -131,7 +131,7 @@ function Sidebar() {
         <div>
           <div
             onClick={() => logOut()}
-            className="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+            className="relative cursor-pointer flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-700 hover:text-gray-800 border-l-4 border-transparent hover:border-[#9146FF] pr-6"
           >
             <span className="inline-flex justify-center items-center ml-4">
               <svg

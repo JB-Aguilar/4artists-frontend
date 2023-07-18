@@ -8,10 +8,9 @@ import ImageCard from "../ImageCard/ImageCard";
 import { toggleLike } from "../../services/user.services";
 import { GetProfileAPI } from "../../services/profile.services";
 
-function Postcard({ post }) {
-  const [like, setLike] = useState(false);
-  const [likesCount, setLikesCount] = useState(0);
+function Postcard({ post, likes, handleReload }) {
   const [user, setUser] = useState("");
+  
 
   const getUser = async () => {
     const res = await GetProfileAPI();
@@ -21,16 +20,32 @@ function Postcard({ post }) {
   };
 
    const handleLike = async () => {
-     const { liked } = await toggleLike(user.id, post.id);
-     setLike(liked);
-     setLikesCount((prevCount) => (liked ? prevCount + 1 : prevCount - 1));
+     const res = await toggleLike(user.id, post.id);
+     handleReload()
    };
+
+   const countLikes = () => {
+    const postLike = {
+      number: 0,
+      liked: false
+    }
+
+    likes.forEach(like => {
+      if(post.id === like.postId) {
+        postLike.number++
+
+        if(user.id === like.userId) {
+          postLike.liked = true
+        }
+      }
+    });
+
+    return postLike
+   }
 
    useEffect(() => {
      getUser();
-     setLike(post.likes && post.likes.includes(user.id));
-     setLikesCount(post.likes ? post.likes.length > 0 : 0);
-   }, [post.likes, user.id]);
+   }, []);
 
   return (
     <div className=" flex flex-col flex-shrink-0 antialiased  text-gray-300">
@@ -45,7 +60,7 @@ function Postcard({ post }) {
           />
           <div className="flex w-full flex-col gap-0.5 ">
             <div className="flex items-center justify-between">
-              <h5 className="block font-sans text-xl font-semibold leading-snug tracking-normal ml-2 text-gray-700 hover:text-indigo-600 text-blue-gray-900 antialiased">
+              <h5 className="block font-sans text-xl font-semibold leading-snug tracking-normal ml-2 text-gray-700 hover:text-[#9146FF] text-blue-gray-900 antialiased">
                 {post.user.username}
               </h5>
               <div className="flex items-center pr-5 gap-0 text-gray-500">
@@ -58,11 +73,13 @@ function Postcard({ post }) {
           <p className=" block font-sans text-lg font-semibold leading-relaxed text-left antialiased text-gray-500">
             {post.text}
           </p>
-          <div>{post.text != "image" ? "" : <ImageCard />}</div>
+          {post.img && (
+            <div>
+              <ImageCard img={post.img} />
+            </div>
+          )}
           <div className="flex flex-row-reverse gap-5 ">
-            <p className="w-6 h-6 mt-4 text-gray-500">
-              {likesCount > 0 ? likesCount : ""}
-            </p>
+            <p className="w-6 h-6 mt-4 text-gray-500">{countLikes().number}</p>
             <div className="flex flex-row-reverse gap-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,9 +87,13 @@ function Postcard({ post }) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className={`w-6 h-6 mt-4 ${
-                  like ? "fill-red-500 text-red-500" : " text-red-500"
-                }`}
+                className={`w-6 h-6 mt-4 
+                  ${
+                    countLikes().liked
+                      ? "fill-red-500 text-red-500"
+                      : " text-red-500"
+                  }
+                `}
                 onClick={() => {
                   handleLike();
                 }}

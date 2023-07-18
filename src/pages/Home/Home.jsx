@@ -9,37 +9,55 @@ import Trending from "../../components/Trending/Trending";
 
 function Home() {
   const [posts, setPost] = useState([]);
+  const [likes, setLikes] = useState([])
+  const [reload, setReload] = useState(false)
 
   const GetPosts = async () => {
     try{
       const res = await GetPostsApi();
-      setPost(res);
+      if(res) {
+        setPost(res.post);
+        setLikes(res.likes)
+      }
     }catch(error){
       console.error(error)
     }
   };
 
+  const handleReload = () => {
+    setReload(true)
+  }
+
   useEffect(() => {
     GetPosts();
-  }, []);
+    setReload(false)
+  }, [reload]);
 
-  const handleNewPost = async (text) => {
+  const handleNewPost = async (text, img) => {
     try {
-      await CreatePostAPI(text)
+      await CreatePostAPI(text, img)
       GetPosts()
     }catch(error){
        console.error(error)
     }
   }
 
-  console.log(posts)
-
   return (
     <div className="">
       <Sidebar />
       <TextInput onNewPost={handleNewPost} />
       {posts.length > 0 &&
-        posts.slice().reverse().map((post) => <Postcard key={post.id} post={post} />)}
+        posts
+          .slice()
+          .reverse()
+          .map((post) => (
+            <Postcard
+              key={post.id}
+              post={post}
+              likes={likes}
+              handleReload={handleReload}
+            />
+          ))}
       <ToFollow />
       <Trending />
     </div>

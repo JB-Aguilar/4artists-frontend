@@ -1,7 +1,7 @@
 function Trending() {
   return (
     <div className="flex fixed z-6 right-0 top-10 mt-96">
-        <div className="max-w-lg w-80 bg-sky-200 overflow-hidden shadow-lg m-4 mr-20">
+        <div className="max-w-lg w-80 bg-white overflow-hidden shadow-lg m-4 mr-20">
                     <div className="flex">
                         <div className="flex-1 m-2">
                             <h2 className="px-4 py-2 text-xl w-48 mt-1 font-semibold text-gray-700">Global Trends</h2>
