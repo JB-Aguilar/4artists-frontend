@@ -38,7 +38,7 @@ To inspire creativity and promote friendly competition, 4Artists hosts regular a
 
 To get started with 4Artists, simply follow these steps:
 
-1. Visit our website at [www.4artists.com](https://www.4artists.com) and sign up for a free artist account.
+1. Visit our website and sign up for a free artist account.
 2. Create your artist profile, upload your portfolio, and customize your account settings.
 3. Start exploring the community, connecting with fellow artists, and engaging in discussions.
 4. Protect your artwork by adjusting visibility settings and using our watermarking features.
