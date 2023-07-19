@@ -34,6 +34,14 @@ To inspire creativity and promote friendly competition, 4Artists hosts regular a
 
 4Artists provides a platform for artists to attract potential clients for commissions, exhibitions, or other opportunities. Clients can easily discover artists based on their portfolio, style, and location, fostering collaborations and professional growth.
 
+## Technologies Used
+
+4Artists is developed using the following technologies:
+
+- **React**: A JavaScript library for building user interfaces.
+- **MySQL**: A relational database management system for storing and managing data.
+- **Tailwind CSS**: A utility-first CSS framework for designing responsive and customizable user interfaces.
+
 ## Getting Started
 
 To get started with 4Artists, simply follow these steps:
