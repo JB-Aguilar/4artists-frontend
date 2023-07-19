@@ -45,17 +45,9 @@ To get started with 4Artists, simply follow these steps:
 5. Participate in artistic challenges to showcase your talent and gain recognition.
 6. Connect with potential clients and explore exciting opportunities for your artistic career.
 
-## Contributing
-
-We welcome contributions from developers, designers, and artists to help improve and expand the 4Artists platform. If you're interested in contributing, please refer to our [Contribution Guidelines].
-
-## Support
-
-For any issues, queries, or feedback, please reach out to our support team at support@4artists.com or [submit a ticket].
-
 ## License
 
-4Artists is an open-source project, and it is available under the [MIT License].
+4Artists is an open-source project, and it is available under the MIT License.
 
 ---
 
