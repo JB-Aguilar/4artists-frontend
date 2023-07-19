@@ -31,14 +31,14 @@ The combination of these key features enables artists to freely express themselv
 
 ## Getting Started
 
-To get started with 4Artists, simply follow these steps:
+To set up and run the 4Artists backend locally, follow these steps:
 
-1. Visit our website and sign up for a free artist account.
-2. Create your artist profile, upload your portfolio, and customize your account settings.
-3. Start exploring the community, connecting with fellow artists, and engaging in discussions.
-4. Protect your artwork by adjusting visibility settings and using our watermarking features.
-5. Participate in artistic challenges to showcase your talent and gain recognition.
-6. Connect with potential clients and explore exciting opportunities for your artistic career.
+1. Clone the repository from [GitHub](https://github.com/JB-Aguilar/4Artists).
+2. Install the required dependencies using `npm install`.
+3. Create a MySQL database and configure the connection in `.env` file.
+4. Run the database migrations using `npm run knex migrate:latest`.
+5. Start the backend server with `npm start`.
+6. The backend will run on `http://localhost:3000`.
 
 ## License
 
