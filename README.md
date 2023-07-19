@@ -47,15 +47,15 @@ To get started with 4Artists, simply follow these steps:
 
 ## Contributing
 
-We welcome contributions from developers, designers, and artists to help improve and expand the 4Artists platform. If you're interested in contributing, please refer to our [Contribution Guidelines](CONTRIBUTING.md).
+We welcome contributions from developers, designers, and artists to help improve and expand the 4Artists platform. If you're interested in contributing, please refer to our [Contribution Guidelines].
 
 ## Support
 
-For any issues, queries, or feedback, please reach out to our support team at support@4artists.com or [submit a ticket](https://www.4artists.com/support).
+For any issues, queries, or feedback, please reach out to our support team at support@4artists.com or [submit a ticket].
 
 ## License
 
-4Artists is an open-source project, and it is available under the [MIT License](LICENSE).
+4Artists is an open-source project, and it is available under the [MIT License].
 
 ---
 
